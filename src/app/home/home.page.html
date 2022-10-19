@@ -1,11 +1,23 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/places"></ion-back-button>
+    </ion-buttons>
     <ion-title>
-      Hola mundo
+      Json place holder
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-text>Mi primera app</ion-text>
+  <ion-list>
+    <ion-card *ngFor="let photo of photos">
+      <img [src]="photo.url">
+      <ion-card-content>
+        <p>{{photo.title}}</p>
+        <p>{{photo.albumId}}</p>
+        <p>: <a [href]="photo.thumbnailUrl" target="_blank">{{photo.thumbnailUrl}}</a></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
