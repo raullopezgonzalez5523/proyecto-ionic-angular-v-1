@@ -31,4 +31,8 @@ export class PlacesPage implements OnInit {
     this.router.navigate(['./home'])
   }
 
+  getUsers() {
+    this.router.navigate(['./users'])
+  }
+
 }
